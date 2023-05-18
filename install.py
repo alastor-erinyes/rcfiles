@@ -42,10 +42,10 @@ if args.uninstall:
 for f in filtered:
     newfile = os.path.expanduser("~") + "/." + os.path.basename(f)
     # Backup any existing dotfiles we might overwrite, ignore symlinks
-    if "nvimrc" in f:
+    if "init.lua" in f:
         confdir = "/".join((os.path.expanduser("~"), ".config"))
         nvimdir = "/".join((confdir, "nvim"))
-        nvimfile = "/".join((nvimdir, "init.vim"))
+        nvimfile = "/".join((nvimdir, "init.lua"))
         if not os.path.isdir(confdir):
             os.makedirs(confdir)
         if not os.path.isdir(nvimdir):
